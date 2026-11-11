@@ -209,7 +209,7 @@
     </section>
   </div>
 
-<div class="page" id="page-expertos">
+  <div class="page" id="page-expertos">
     <style>
       /* Tamaño de la foto: cambia solo este valor para agrandar o achicar */
       #page-expertos { --foto: 300px; }
@@ -221,8 +221,11 @@
         font-size: 0; display: block;
       }
       #page-expertos .avatar-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
-      /* Con 5 ponentes, la última tarjeta queda sola: se centra */
+      /* Si el número de ponentes es impar, la última tarjeta se centra */
       #page-expertos .speaker-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 1rem); }
+      #page-expertos .speaker-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1rem; }
+      #page-expertos .speaker-links a { display: inline-block; padding: .45rem .9rem; border: 1.5px solid currentColor; border-radius: 999px; font-size: .9rem; font-weight: 600; text-decoration: none; color: inherit; transition: opacity .2s; }
+      #page-expertos .speaker-links a:hover { opacity: .65; }
       @media (max-width: 720px) {
         #page-expertos { --foto: 240px; }
         #page-expertos .grid.grid-2 { grid-template-columns: 1fr; }
@@ -234,7 +237,7 @@
         <div class="section-head">
           <div class="eyebrow">Ponentes</div>
           <h2>Panel de expertos</h2>
-          <p>Este año contamos con especialistas que representan a su institución, compartiendo las últimas novedades en tecnología e innovación ambiental.</p>
+          <p>Este año contamos con 6 especialistas que representan a su institución, compartiendo las últimas novedades en tecnología e innovación ambiental.</p>
         </div>
         <div class="grid grid-2">
           <div class="speaker-card"><div class="avatar-circle"><img src="Ana-Orozco.jpeg" alt="Ana Paula Orozco Ballivian" loading="lazy"></div><span class="tag">Ponente</span><h3>Ana Paula Orozco Ballivian</h3><p class="authors">Programa de Innovación Abierta - UPC</p></div>
@@ -242,11 +245,12 @@
           <div class="speaker-card"><div class="avatar-circle"><img src="Jaime-Calderon.jpg" alt="Jaime Calderón" loading="lazy"></div><span class="tag">Ponente</span><h3>Jaime Calderón</h3><p class="authors">Concalsa</p></div>
           <div class="speaker-card"><div class="avatar-circle"><img src="Jose-Pineda.jpg" alt="José Pineda" loading="lazy"></div><span class="tag">Ponente</span><h3>José Pineda</h3><p class="authors">Earth Institute</p></div>
           <div class="speaker-card"><div class="avatar-circle"><img src="Eduardo-Scerpella.jfif" alt="Eduardo Scerpella" loading="lazy"></div><span class="tag">Ponente</span><h3>Eduardo Scerpella</h3><p class="authors">Pacific Control</p></div>
+          <div class="speaker-card"><div class="avatar-circle"><img src="Eddie.jpg" alt="Eddie Ajalcriña" loading="lazy"></div><span class="tag">Ponente</span><h3>Eddie Ajalcriña</h3><p class="authors">Redesign Lab</p><div class="speaker-links"><a href="https://eddieajalcrina.com/" target="_blank" rel="noopener">Web personal ↗</a><a href="https://redesignlab.org/" target="_blank" rel="noopener">Redesign Lab ↗</a></div></div>
         </div>
       </div>
     </section>
   </div>
-
+  
 <div class="page" id="page-posters">
     <style>
       #page-proyectos .linea-tabs { flex-wrap: wrap; row-gap: .5rem; overflow: visible; }
