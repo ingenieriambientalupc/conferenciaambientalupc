@@ -209,13 +209,23 @@
     </section>
   </div>
 
-  <div class="page" id="page-expertos">
+<div class="page" id="page-expertos">
     <style>
-      #page-expertos .avatar-circle { overflow: hidden; padding: 0; }
-      #page-expertos .avatar-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 50%; display: block; }
+      /* Tamaño de la foto: cambia solo este valor para agrandar o achicar */
+      #page-expertos { --foto: 300px; }
+      #page-expertos .grid.grid-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      #page-expertos .speaker-card { text-align: center; }
+      #page-expertos .avatar-circle {
+        width: min(100%, var(--foto)); height: auto; aspect-ratio: 1 / 1;
+        margin: 0 auto 1.25rem; padding: 0; overflow: hidden; border-radius: 50%;
+        font-size: 0; display: block;
+      }
+      #page-expertos .avatar-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
       /* Con 5 ponentes, la última tarjeta queda sola: se centra */
-      #page-expertos .speaker-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: min(100%, calc(50% - .75rem)); }
+      #page-expertos .speaker-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 1rem); }
       @media (max-width: 720px) {
+        #page-expertos { --foto: 240px; }
+        #page-expertos .grid.grid-2 { grid-template-columns: 1fr; }
         #page-expertos .speaker-card:last-child:nth-child(odd) { width: 100%; }
       }
     </style>
@@ -224,7 +234,7 @@
         <div class="section-head">
           <div class="eyebrow">Ponentes</div>
           <h2>Panel de expertos</h2>
-          <p>Este año contamos con 5 especialistas que representan a su institución, compartiendo las últimas novedades en tecnología e innovación ambiental.</p>
+          <p>Este año contamos con especialistas que representan a su institución, compartiendo las últimas novedades en tecnología e innovación ambiental.</p>
         </div>
         <div class="grid grid-2">
           <div class="speaker-card"><div class="avatar-circle"><img src="Ana-Orozco.jpeg" alt="Ana Paula Orozco Ballivian" loading="lazy"></div><span class="tag">Ponente</span><h3>Ana Paula Orozco Ballivian</h3><p class="authors">Programa de Innovación Abierta - UPC</p></div>
@@ -236,7 +246,6 @@
       </div>
     </section>
   </div>
- 
 
 <div class="page" id="page-posters">
     <style>
