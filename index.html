@@ -210,22 +210,33 @@
   </div>
 
   <div class="page" id="page-expertos">
+    <style>
+      #page-expertos .avatar-circle { overflow: hidden; padding: 0; }
+      #page-expertos .avatar-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 50%; display: block; }
+      /* Con 5 ponentes, la última tarjeta queda sola: se centra */
+      #page-expertos .speaker-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: min(100%, calc(50% - .75rem)); }
+      @media (max-width: 720px) {
+        #page-expertos .speaker-card:last-child:nth-child(odd) { width: 100%; }
+      }
+    </style>
     <section>
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow">Ponentes</div>
           <h2>Panel de expertos</h2>
-          <p>Este año contamos con 4 especialistas que representan a su institución, compartiendo las últimas novedades en tecnología e innovación ambiental.</p>
+          <p>Este año contamos con 5 especialistas que representan a su institución, compartiendo las últimas novedades en tecnología e innovación ambiental.</p>
         </div>
         <div class="grid grid-2">
-          <div class="placeholder speaker-card"><div class="avatar-circle">👤</div><span class="tag">Por confirmar</span><h3>Nombre del ponente</h3><p class="authors">Institución que representa</p></div>
-          <div class="placeholder speaker-card"><div class="avatar-circle">👤</div><span class="tag">Por confirmar</span><h3>Nombre del ponente</h3><p class="authors">Institución que representa</p></div>
-          <div class="placeholder speaker-card"><div class="avatar-circle">👤</div><span class="tag">Por confirmar</span><h3>Nombre del ponente</h3><p class="authors">Institución que representa</p></div>
-          <div class="placeholder speaker-card"><div class="avatar-circle">👤</div><span class="tag">Por confirmar</span><h3>Nombre del ponente</h3><p class="authors">Institución que representa</p></div>
+          <div class="speaker-card"><div class="avatar-circle"><img src="Ana-Orozco.jpeg" alt="Ana Paula Orozco Ballivian" loading="lazy"></div><span class="tag">Ponente</span><h3>Ana Paula Orozco Ballivian</h3><p class="authors">Programa de Innovación Abierta - UPC</p></div>
+          <div class="speaker-card"><div class="avatar-circle"><img src="Katya.jpeg" alt="Katya Silva" loading="lazy"></div><span class="tag">Ponente</span><h3>Katya Silva</h3><p class="authors">Foreslab</p></div>
+          <div class="speaker-card"><div class="avatar-circle"><img src="Jaime-Calderon.jpg" alt="Jaime Calderón" loading="lazy"></div><span class="tag">Ponente</span><h3>Jaime Calderón</h3><p class="authors">Concalsa</p></div>
+          <div class="speaker-card"><div class="avatar-circle"><img src="Jose-Pineda.jpg" alt="José Pineda" loading="lazy"></div><span class="tag">Ponente</span><h3>José Pineda</h3><p class="authors">Earth Institute</p></div>
+          <div class="speaker-card"><div class="avatar-circle"><img src="Eduardo-Scerpella.jfif" alt="Eduardo Scerpella" loading="lazy"></div><span class="tag">Ponente</span><h3>Eduardo Scerpella</h3><p class="authors">Pacific Control</p></div>
         </div>
       </div>
     </section>
   </div>
+ 
 
 <div class="page" id="page-posters">
     <style>
